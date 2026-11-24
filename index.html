@@ -589,7 +589,7 @@
       whatsappNumber: "213667545845", // صيغة دولية للجزائر من الرقم 0667545845
       displayPhone: "0667545845",
       productTitle: "ملف PDF (كيف تبدأ زيوت طبيعية في الجزائر) + ملف Excel لحساب التكاليف وتسعير المنتج",
-      price: "3500 دج"
+      price:"15$" "3500 دج"  
     };
 
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -616,8 +616,7 @@
         `• السعر: ${CONFIG.price}\n` +
         `• الاسم: ${name}\n` +
         `• الهاتف: ${phone}\n` +
-        `• الولاية: ${wilaya}\n` +
-        `• طريقة الدفع المختارة: ${payment}`;
+              `• طريقة الدفع المختارة: ${payment}`;
 
       const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
       window.open(waUrl, "_blank");
