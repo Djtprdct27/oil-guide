@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>كيف تبدأ مشروع زيوت طبيعية في الجزائر | باقة الدليل + حاسبة التسعير</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* يمكنك تعديل الألوان والخطوط من هنا بسهولة */
+      --bg-main: #f6f9f4;
+      --bg-card: #ffffff;
+      --primary: #14532d;       /* أخضر داكن مستوحى من هوية الدليل */
+      --primary-light: #166534;
+      --accent: #d97706;        /* ذهبي / عسلي للزيوت */
+      --accent-soft: #fef3c7;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border: #dce7d8;
+      --whatsapp: #16a34a;
+      --whatsapp-hover: #15803d;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(20, 83, 45, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* شريط علوي */
+    .topbar {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 0;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    .topbar span {
+      color: #fde68a;
+      font-weight: 700;
+    }
+
+    /* القسم الرئيسي Hero */
+    .hero {
+      background: linear-gradient(135deg, #0f3d21 0%, #166534 65%, #1f7a43 100%);
+      color: #fff;
+      padding: 56px 0 64px;
+      border-bottom-left-radius: 36px;
+      border-bottom-right-radius: 36px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(253, 230, 138, 0.16);
+      border: 1px solid rgba(253, 230, 138, 0.45);
+      color: #fde68a;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.85rem, 3.6vw, 2.85rem);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: #fbbf24;
+    }
+
+    .hero p.lead {
+      font-size: 1.08rem;
+      color: #ecfdf5;
+      margin-bottom: 24px;
+    }
+
+    .price-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .price-label {
+      font-size: 0.9rem;
+      color: #d1fae5;
+    }
+
+    .price-value {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fbbf24;
+    }
+
+    .payment-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: #ffffff;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: 10px;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 800;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn-wa {
+      background: var(--whatsapp);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(22, 163, 74, 0.35);
+    }
+
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-card {
+      background: #fff;
+      color: var(--text-main);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+      text-align: center;
+    }
+
+    .hero-card img {
+      width: 100%;
+      max-height: 430px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    .hero-card-caption {
+      margin-top: 12px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* الأقسام */
+    section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .checklist {
+      list-style: none;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-right: 26px;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: var(--whatsapp);
+      font-weight: 900;
+    }
+
+    /* معرض العينات */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-item .caption {
+      padding: 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+      text-align: center;
+    }
+
+    /* نموذج الطلب والدفع */
+    .order-section {
+      background: #eef5ea;
+    }
+
+    .order-box {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .order-summary {
+      background: var(--accent-soft);
+      border: 1px solid #fcd34d;
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.98rem;
+      background: #fff;
+    }
+
+    .payment-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .pay-option {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .pay-option input {
+      width: auto;
+    }
+
+    .payment-note {
+      margin-top: 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: #f8fafc;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border-right: 4px solid var(--primary);
+    }
+
+    .submit-full {
+      width: 100%;
+      margin-top: 18px;
+      padding: 15px;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      background: var(--primary);
+      color: #ecfdf5;
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .two-col,
+      .payment-options {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شريط علوي -->
+  <div class="topbar">
+    عرض الباقة الرقمية الكاملة: <span>3500 دج</span> | الدفع متاح عبر <span>CCP</span> و <span>كارت فيزا</span>
+  </div>
+
+  <!-- القسم الرئيسي -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">منتجات رقمية عملية للسوق الجزائري</div>
+        <h1>كيف تبدأ مشروع <em>زيوت طبيعية</em> في الجزائر؟</h1>
+        <p class="lead">
+          احصل على <strong>دليل PDF شامل</strong> يشرح الخطوات القانونية وطرق الاستخلاص والتسويق في الجزائر، مرفقاً بـ <strong>ملف Excel جاهز</strong> لحساب تكلفة اللتر وتسعير القارورة بدقة.
+        </p>
+
+        <div class="price-box">
+          <div>
+            <div class="price-label">سعر الباقة الكاملة</div>
+            <div class="price-value">3500 دج</div>
+          </div>
+          <div>
+            <div class="price-label" style="margin-bottom:6px;">طرق الدفع المتاحة:</div>
+            <div class="payment-pills">
+              <span class="pill">CCP</span>
+              <span class="pill">كارت فيزا (Visa)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-group">
+          <a id="heroWaBtn" href="#" target="_blank" class="btn btn-wa">
+            اطلب الآن عبر واتساب: 0667545845
+          </a>
+          <a href="#order-form" class="btn btn-outline">
+            إدخال طلبية جديدة
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <!-- غيّر مسار الصورة أدناه إلى رابط صورة الغلاف المرفوعة على موقعك -->
+        <img id="coverImg" src="capture-1.png" alt="غلاف دليل كيف تبدأ مشروع زيوت طبيعية في الجزائر" onerror="this.style.display='none'">
+        <div class="hero-card-caption">ملف PDF + ملف Excel لحساب التكاليف والتسعير</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ماذا تتضمن الباقة -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>ماذا ستستلم عند الطلب؟</h2>
+        <p>كل ما تحتاجه للانطلاق بخطوات منظمة وحسابات دقيقة قبل شراء المواد أو المعدات.</p>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>1. ملف PDF: كيف تبدأ زيوت طبيعية في الجزائر</h3>
+          <ul class="checklist">
+            <li>اختيار نوع النشاط والفئة المستهدفة قبل الشراء.</li>
+            <li>الإجراءات القانونية في الجزائر (تسجيل العلامة في INAPI، السجل التجاري، بطاقة المقاول الذاتي، بطاقة حرفي).</li>
+            <li>طرق استخلاص الزيوت (الضغط الميكانيكي البارد، التقطير بالبخار، النقع) والمواد الأولية والتغليف.</li>
+            <li>أساسيات التسويق والمبيعات وبناء الثقة مع الزبائن.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>2. ملف Excel: حاسبة التكاليف وتسعير المنتج</h3>
+          <ul class="checklist">
+            <li>حساب تكلفة اللتر الواحد من الزيت المعصور بناءً على سعر البذور والمردود والطاقة.</li>
+            <li>تقدير أثر تغير نسبة المردود على تكلفة اللتر تلقائياً.</li>
+            <li>حساب تكلفة القارورة والعلبة والتغليف والملصق.</li>
+            <li>تحديد سعر البيع بالتجزئة والجملة مع مراعاة الإعلان والتوصيل والضريبة والهامش الصافي.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- عينات من داخل الملفات -->
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="section-title">
+        <h2>عينات من الملفات الرقمية</h2>
+        <p>استبدل مسارات الصور أدناه بروابط صورك المباشرة (Capture 2، Capture 3، Capture 4، Capture 5) عند النشر.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="capture-2.png" alt="فهرس الدليل" onerror="this.alt='ضع رابط صورة الفهرس هنا'">
+          <div class="caption">فهرس منظم ومفصل للدليل</div>
+        </div>
+        <div class="gallery-item">
+          <img src="capture-3.png" alt="الفصل الثاني الإجراءات القانونية" onerror="this.alt='ضع رابط صورة الإجراءات القانونية هنا'">
+          <div class="caption">شرح الإجراءات القانونية وتسجيل العلامة</div>
+        </div>
+        <div class="gallery-item">
+          <img src="capture-4.png" alt="ورقة تسعير القارورة في Excel" onerror="this.alt='ضع رابط صورة تسعير القارورة هنا'">
+          <div class="caption">ورقة تسعير القارورة (تجزئة وجملة)</div>
+        </div>
+        <div class="gallery-item">
+          <img src="capture-5.png" alt="ورقة تكلفة اللتر في Excel" onerror="this.alt='ضع رابط صورة تكلفة اللتر هنا'">
+          <div class="caption">حاسبة تكلفة اللتر والمردود</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- نموذج إدخال الطلبية والتحويل إلى الواتساب -->
+  <section id="order-form" class="order-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>أدخل طلبيتك الآن</h2>
+        <p>املأ بياناتك واختر وسيلة الدفع (CCP أو كارت فيزا)، وسيتم تجهيز رسالتك لإرسالها مباشرة عبر الواتساب.</p>
+      </div>
+
+      <div class="order-box">
+        <div class="order-summary">
+          <span>المنتج: دليل زيوت طبيعية في الجزائر (PDF) + ملف Excel للتسعير</span>
+          <span style="color: var(--primary); font-size: 1.15rem;">السعر: 3500 دج</span>
+        </div>
+
+        <form id="whatsappOrderForm">
+          <div class="form-group">
+            <label for="customerName">الاسم الكامل</label>
+            <input type="text" id="customerName" placeholder="مثال: أمين بن علي" required />
+          </div>
+
+          <div class="form-group">
+            <label for="customerPhone">رقم الهاتف / واتساب</label>
+            <input type="tel" id="customerPhone" placeholder="مثال: 0550123456" required />
+          </div>
+
+          <div class="form-group">
+            <label for="customerWilaya">الولاية</label>
+            <input type="text" id="customerWilaya" placeholder="مثال: الجزائر العاصمة / سطيف / وهران..." required />
+          </div>
+
+          <div class="form-group">
+            <label>طريقة الدفع المفضلة</label>
+            <div class="payment-options">
+              <label class="pay-option">
+                <input type="radio" name="paymentMethod" value="CCP" checked />
+                <span>الدفع عبر CCP</span>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="paymentMethod" value="كارت فيزا (Visa)" />
+                <span>الدفع عبر كارت فيزا (Visa)</span>
+              </label>
+            </div>
+            <div class="payment-note">
+              بعد إرسال الطلب عبر الواتساب، سيتم تزويدك بتفاصيل الدفع المناسبة لاختيارك (<strong>CCP</strong> أو <strong>كارت فيزا</strong>) ثم تسليم الملفات الرقمية فور تأكيد الدفع.
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-wa submit-full">
+            إرسال الطلب عبر واتساب (0667545845)
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      جميع الحقوق محفوظة © <span id="year"></span> — طلب واستفسار مباشر عبر واتساب: <strong>0667545845</strong>
+    </div>
+  </footer>
+
+  <script>
+    /* ==========================================================
+       إعدادات سريعة قابلة للتعديل:
+       غيّر القيم هنا فقط إذا أردت تعديل الرقم أو السعر أو الرسالة
+       ========================================================== */
+    const CONFIG = {
+      whatsappNumber: "213667545845", // صيغة دولية للجزائر من الرقم 0667545845
+      displayPhone: "0667545845",
+      productTitle: "ملف PDF (كيف تبدأ زيوت طبيعية في الجزائر) + ملف Excel لحساب التكاليف وتسعير المنتج",
+      price: "3500 دج"
+    };
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // رابط زر الواتساب المباشر في أعلى الصفحة
+    const directMessage = encodeURIComponent(
+      `السلام عليكم، أرغب في طلب الباقة الرقمية (${CONFIG.productTitle}) بسعر ${CONFIG.price}.`
+    );
+    document.getElementById("heroWaBtn").href =
+      `https://wa.me/${CONFIG.whatsappNumber}?text=${directMessage}`;
+
+    // معالجة نموذج إدخال الطلبية وتحويله إلى واتساب
+    document.getElementById("whatsappOrderForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerPhone").value.trim();
+      const wilaya = document.getElementById("customerWilaya").value.trim();
+      const payment = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+      const message =
+        `السلام عليكم، أود إدخال طلبية جديدة:\n` +
+        `• المنتج: ${CONFIG.productTitle}\n` +
+        `• السعر: ${CONFIG.price}\n` +
+        `• الاسم: ${name}\n` +
+        `• الهاتف: ${phone}\n` +
+        `• الولاية: ${wilaya}\n` +
+        `• طريقة الدفع المختارة: ${payment}`;
+
+      const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, "_blank");
+    });
+  </script>
+</body>
+</html>
